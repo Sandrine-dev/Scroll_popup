@@ -17,15 +17,22 @@ window.addEventListener("scroll", () => {
   }
 
   //IMAGE IMPROVISE
-  if (window.scrollY > 150) {
+  /*if (window.scrollY > 150) {
+    image.style.opacity = "1";
+    image.style.transform = "inherit";
+  }*/
+
+  // better with "viewport"
+
+  //to see where you are without the scrollbar
+  const scrolledTo = window.scrollY + window.innerHeight;
+  if (scrolledTo > 0.45) {
     image.style.opacity = "1";
     image.style.transform = "inherit";
   }
 
   //Find if you are at the bottom
-  const scrolledTo = window.scrollY + window.innerHeight;
   const isReachBottom = document.body.scrollHeight;
-
   //console.log(scrolledTo, isReachBottom);
 
   //POPUP
@@ -41,4 +48,3 @@ window.addEventListener("scroll", () => {
 closePopup.addEventListener("click", () => {
   popup.remove();
 });
-// Bonus : quand on clicke sur la popup elle disparait pour toujours
